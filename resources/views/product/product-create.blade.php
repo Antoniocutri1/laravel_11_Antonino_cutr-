@@ -17,8 +17,12 @@
                         <input type="text" class="form-control" id="input" name="name">
                     </div>
                     <div class="mb-3">
-                        <label for="e-mail" class="form-label">Inserisci email</label>
-                        <input type="email" class="form-control" id="e-mail" name="e-mail">
+                        <label for="type" class="form-label">Inserisci Il tipo</label>
+                        <input type="text" class="form-control" id="type" name="type">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Inserisci Il prezzo</label>
+                        <input type="number" step="0.01" class="form-control" id="price" name="price">
                     </div>
                     <div class=" mt-3 mb-3">
                         <label for="description" class="form-label">Inserisci una descrizione</label>
