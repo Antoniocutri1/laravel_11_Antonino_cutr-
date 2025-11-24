@@ -10,4 +10,6 @@ Route::get('/contact-us', [PublicController::class, 'contact_us'])->name('contac
 Route::post('/contact-us', [PublicController::class, 'email'])->name('email');
 
 Route::get('/product', [ProductController::class, 'index'])->name('products');
-Route::view('/product/create', 'product.product-create')->name('product.form');
+
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.form');
+Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');

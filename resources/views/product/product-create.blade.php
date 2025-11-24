@@ -10,7 +10,7 @@
 
         <div class="row d-flex justify-content-center align-items-center mt-3">
             <div class="col-12 w-50 bg-secondary p-3 text-white">
-                <form method="POST" action="">
+                <form method="POST" action="{{route('product.store')}}">
                     @csrf
                     <div class="mb-3 ">
                         <label for="input" class="form-label">Inserisci il nome</label>
