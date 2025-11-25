@@ -5,6 +5,10 @@
                 <form method="POST" action="{{route('register')}}">
                     @csrf
                     <div class="mb-3">
+                        <label for="name" class="form-label">Inserisci il nome</label>
+                        <input type="text" class="form-control" id="name" name="name" >
+                    </div>                    
+                    <div class="mb-3">
                         <label for="email" class="form-label">Indirizzo e-mail</label>
                         <input type="email" class="form-control" id="email" name="email" >
                     </div>
