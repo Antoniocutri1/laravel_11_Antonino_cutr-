@@ -7,15 +7,7 @@
             </div>
         </div>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        <x-display-error/>
 
         <div class="row d-flex justify-content-center align-items-center mt-3">
             <div class="col-12 w-50 bg-secondary p-3 text-white">

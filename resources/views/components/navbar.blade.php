@@ -14,28 +14,39 @@
         <li class="nav-item">
           <a class="nav-link text-white fs-4" href="{{route('products')}}">Prodotti</a>
         </li>
-        @if (request()->routeIs('products'))
-          <li class="nav-item">
-            <a class="nav-link text-white fs-4" href="{{route('product.form')}}">Inserisci prodotto</a>
-          </li>
-        @endif
+        @auth
+          @if (request()->routeIs('products'))
+            <li class="nav-item">
+              <a class="nav-link text-white fs-4" href="{{route('product.form')}}">Inserisci prodotto</a>
+            </li>
+          @endif
+        @endauth
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white fs-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Utente
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
-            <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
-            <li>
-              <form action="{{route('logout')}}" method="POST">
-                @csrf 
-                <button class="dropdown-item" type="submit">Logout</button>
-              </form>
-            </li>
+            @guest
+              <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+              <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
+            @endguest
+
+            @auth
+              <li>
+                <form action="{{route('logout')}}" method="POST">
+                  @csrf 
+                  <button class="dropdown-item" type="submit">Logout</button>
+                </form>
+              </li>
+            @endauth
           </ul>
         </li>
-        
+        @auth
+          <li class="nav-item">
+            <p class="nav-link text-white fs-4">Benvenuto {{Auth::user()->name}}</a>
+          </li>
+        @endauth
     </div>
   </div>
 </nav>

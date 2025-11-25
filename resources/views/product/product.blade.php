@@ -1,10 +1,6 @@
 <x-layout>
 
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
+    <x-status/>
 
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
