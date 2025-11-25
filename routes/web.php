@@ -16,3 +16,5 @@ Route::post('/product/store', [ProductController::class, 'store'])->name('produc
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show')->middleware('auth');
 Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy')->middleware('auth');
 
+Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit')->middleware('auth');
+
