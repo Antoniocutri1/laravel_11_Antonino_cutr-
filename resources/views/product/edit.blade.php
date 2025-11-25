@@ -2,7 +2,7 @@
     <div class="container-fluid vh-100">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12">
-                <h1 class="text-center my-3">Modifica Prodotto</h1>
+                <h1 class="text-center my-3">Modifica Prodotto: {{$product->name}}</h1>
             </div>
         </div>
 
