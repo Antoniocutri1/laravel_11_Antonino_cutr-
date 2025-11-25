@@ -6,8 +6,10 @@
     @endif
     <div class="card-body">
         <h3 class="card-title">{{$product->name}}</h3>
-        <h5 class="card-text"> {{$product->type}}</h5>
-        <p class="card-text">{{$product->description}}</p>
-        <p class="card-text">{{$product->price}}</p>
+        <h5 class="card-subtitle"> {{$product->type}}</h5>
+        <div class="d-flex justify-content-between mt-2">
+            <a href="{{route('product.show', $product)}}" class="btn btn-primary">Vedi di più</a>
+            <a href="#" class="btn btn-danger w-25"><i class="bi bi-trash"></i></a>
+        </div>
     </div>
 </div>

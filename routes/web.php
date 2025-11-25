@@ -12,4 +12,5 @@ Route::post('/contact-us', [PublicController::class, 'email'])->name('email');
 Route::get('/product', [ProductController::class, 'index'])->name('products');
 
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.form')->middleware('auth');
-Route::post('/product/create', [ProductController::class, 'store'])->name('product.store')->middleware('auth');
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store')->middleware('auth');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show')->middleware('auth');
