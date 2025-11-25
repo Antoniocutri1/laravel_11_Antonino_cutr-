@@ -9,7 +9,11 @@
         <h5 class="card-subtitle"> {{$product->type}}</h5>
         <div class="d-flex justify-content-between mt-2">
             <a href="{{route('product.show', $product)}}" class="btn btn-primary">Vedi di più</a>
-            <a href="#" class="btn btn-danger w-25"><i class="bi bi-trash"></i></a>
+            <form action="{{route('product.destroy', $product) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+            </form>
         </div>
     </div>
 </div>
